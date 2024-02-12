@@ -1,0 +1,10 @@
+mergeInto(LibraryManager.library, {
+
+  GiveMePlayerData: function () {
+    console.log(player.getName());
+    console.log(player.getPhoto("medium"));
+  },
+
+  
+});
+
