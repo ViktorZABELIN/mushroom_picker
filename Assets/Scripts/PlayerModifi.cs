@@ -17,7 +17,7 @@ public class PlayerModifi : MonoBehaviour
 
     [SerializeField] Transform _collaiderTransform;
 
-    [SerializeField] AudioSource _audioSource;
+    [SerializeField] SoundEffect _soundEffect;
 
 
     private void Start()
@@ -25,7 +25,6 @@ public class PlayerModifi : MonoBehaviour
         SetWight(Progress.Inctance._playerInfo.Width);
         SetHeight(Progress.Inctance._playerInfo.Heigth);
     }
-
 
     void Update()
     {
@@ -50,13 +49,17 @@ public class PlayerModifi : MonoBehaviour
         UpdateWight();
         if (value > 0)
         {
-            _audioSource.Play();
+            _soundEffect.PumpSound();
         }
     }
 
     public void AddHight(int value)
     {
         _hight += value;
+        if (value > 0)
+        {
+            _soundEffect.PumpSound();
+        }
     }
 
     public void SetWight(int value)
@@ -65,13 +68,17 @@ public class PlayerModifi : MonoBehaviour
         UpdateWight();
         if (value > 0)
         {
-            _audioSource.Play();
+            _soundEffect.PumpSound();
         }
     }
 
     public void SetHeight(int value)
     {
         _hight += value;
+        if (value > 0)
+        {
+            _soundEffect.PumpSound();
+        }
     }
 
     public void HitBarrier()

@@ -70,8 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9576c1ea2c7de034e9a72924b767ffb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 5
-  deformationType: 1
   gateScript: {fileID: 2655095155584137948}
 --- !u!65 &6828305478897423077
 BoxCollider:
@@ -84,8 +82,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3503422, y: 1.961499, z: 0.07567787}
-  m_Center: {x: -0.047903597, y: 0.97311485, z: -0.00095272064}
+  m_Size: {x: 2.3273249, y: 1.961499, z: 0.5574293}
+  m_Center: {x: 0.028919458, y: 0.97311485, z: 0.0032114983}
 --- !u!1 &2655095155595061804
 GameObject:
   m_ObjectHideFlags: 0

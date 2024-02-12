@@ -14,21 +14,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject soundOffButton;
     [SerializeField] GameObject soundOnButton;
+    [SerializeField] SoundEffect soundEffect;
+
 
     [DllImport("__Internal")]
     private static extern void RateYandexGame();
 
-    public void Start()
-    {
-        if (Progress.Inctance._playerInfo.Sound == 0)
-        {
-            SoundOff();
-        }
-        else
-        {
-            SoundOn();
-        }
-    }
+    [DllImport("__Internal")]
+    private static extern void WriteToConsole(string data);
 
     public void Update()
     {
@@ -50,14 +43,15 @@ public class GameManager : MonoBehaviour
     {
         Progress.Inctance._playerInfo.Level++;
         SceneManager.LoadScene(0);
+        if (Progress.Inctance._playerInfo.Sound == 0)
+        {
+            SoundOff();
+        }
+        else
+        {
+            SoundOn();
+        }
         Progress.Inctance.SaveData();
-
-        //int next = SceneManager.GetActiveScene().buildIndex + 1;
-        //if (next < SceneManager.sceneCountInBuildSettings) 
-        //{
-        //    _coinManager.SaveToProgress();
-        //    SceneManager.LoadScene(next);
-        //}
     }
 
     public void RateGame()
@@ -75,6 +69,8 @@ public class GameManager : MonoBehaviour
         Progress.Inctance._playerInfo.Sound = 0;
         soundOffButton.SetActive(false);
         soundOnButton.SetActive(true);
+        soundEffect.GameMusicOff();
+
     }
 
     public void SoundOn()
@@ -82,6 +78,7 @@ public class GameManager : MonoBehaviour
         Progress.Inctance._playerInfo.Sound = 1;
         soundOnButton.SetActive(false);
         soundOffButton.SetActive(true);
+        soundEffect.GameMusicOn();
     }
 
 }

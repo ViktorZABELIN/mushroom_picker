@@ -31,9 +31,7 @@ public class GateScript : MonoBehaviour
 
     public void UpdateVisual(DeformationType deformationType, int value)
     {
-
         string prefix = "";
-
 
         if (value > 0)
         {

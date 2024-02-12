@@ -15,21 +15,18 @@ public class PlayerInfo
 
 public class Progress : MonoBehaviour
 {
+    [SerializeField] GameObject GameManager;
+
     [DllImport("__Internal")]
     private static extern void SaveExternData(string data);
 
     [DllImport("__Internal")]
     private static extern void LoadExternData();
 
-    public PlayerInfo _playerInfo;
+    [DllImport("__Internal")]
+    private static extern void WriteToConsole(string data);
 
-    /*
-    public int Level { get { return _playerInfo.Level; } set { _playerInfo.Level = value; } }
-    public int Coins { get { return _playerInfo.Coins; } set { _playerInfo.Coins = value; } }
-    public int Width { get { return _playerInfo.Width; } set { _playerInfo.Width = value; } }
-    public int Heigth { get { return _playerInfo.Heigth; } set { _playerInfo.Heigth = value; } }
-    public int Sound { get { return _playerInfo.Sound; } set { _playerInfo.Sound = value; } }
-    /**/
+    public PlayerInfo _playerInfo;
 
     public static Progress Inctance;
 
@@ -42,6 +39,16 @@ public class Progress : MonoBehaviour
     public void SetPlayerData(string value)
     {
         Inctance._playerInfo = JsonUtility.FromJson<PlayerInfo>(value);
+        WriteToConsole("SetPlayerData: " + JsonUtility.ToJson(Inctance._playerInfo));
+        
+        if (Inctance._playerInfo.Sound == 0)
+        {
+            GameManager.GetComponent<GameManager>().SoundOff();
+        }
+        else
+        {
+            GameManager.GetComponent<GameManager>().SoundOn();
+        }
     }
 
     private void Awake()

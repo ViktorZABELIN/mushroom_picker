@@ -1,24 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundEffect : MonoBehaviour
 {
-    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioSource _buttonClick;
+    [SerializeField] AudioSource _gameMusic;
+    [SerializeField] AudioSource _pumpSound;
 
-
-    public void OnMusic()
+    public void ButtonClick()
     {
-        PlayEffect();
+        if (Progress.Inctance._playerInfo.Sound == 1) _buttonClick.Play();
     }
 
-    public void OffMusic()
+    public void PumpSound()
     {
-
+        if (Progress.Inctance._playerInfo.Sound == 1) _pumpSound.Play();
     }
-    public void PlayEffect()
+
+    public void GameMusicOn()
     {
-        _audioSource.Play();
+        _gameMusic.Play();
+    }
+
+    public void GameMusicOff()
+    {
+        _gameMusic.Stop();
     }
 
 }
