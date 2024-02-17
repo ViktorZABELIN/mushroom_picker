@@ -7,6 +7,12 @@ public class Barrier : MonoBehaviour
 
     [SerializeField] GameObject _bricksEffectPrefab;
 
+    private SoundEffect _briksSound;
+
+    private void Start()
+    {
+        _briksSound = GameObject.Find("Global audio").GetComponent<SoundEffect>();
+    }
 
     public void OnTriggerEnter (Collider other)
     {
@@ -15,6 +21,7 @@ public class Barrier : MonoBehaviour
         if (playerModifi)
         { 
             playerModifi.HitBarrier();
+            _briksSound.BriksSound();
             Destroy(gameObject);
             Instantiate(_bricksEffectPrefab, transform.position, transform.rotation);
         }

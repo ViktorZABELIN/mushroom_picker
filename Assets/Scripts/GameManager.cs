@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject startMenu;
     [SerializeField] GameObject _finishWindow;
+    [SerializeField] GameObject _rateButton;
     [SerializeField] TextMeshProUGUI _levelText;
     [SerializeField] CoinManager _coinManager;
 
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject soundOnButton;
     [SerializeField] SoundEffect soundEffect;
 
+    [DllImport("__Internal")]
+    private static extern void ShowAddInternal();
 
     [DllImport("__Internal")]
     private static extern void RateYandexGame();
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        _levelText.text = string.Format("Level {0}", Progress.Inctance._playerInfo.Level);
+        _levelText.text = string.Format("спнбемэ {0}", Progress.Inctance._playerInfo.Level);
     }
 
     public void Play()
@@ -37,11 +40,15 @@ public class GameManager : MonoBehaviour
     public void FinishWndow()
     {
         _finishWindow.SetActive(true);
+        _rateButton.SetActive(Progress.Inctance.IsRate);
     }
 
     public void NextLevel()
     {
         Progress.Inctance._playerInfo.Level++;
+        
+        if (Progress.Inctance._playerInfo.Level % 3 == 0) ShowAddInternal();
+
         SceneManager.LoadScene(0);
         if (Progress.Inctance._playerInfo.Sound == 0)
         {
@@ -51,7 +58,7 @@ public class GameManager : MonoBehaviour
         {
             SoundOn();
         }
-        Progress.Inctance.SaveData();
+        Progress.Inctance.SaveData("GM: next level");
     }
 
     public void RateGame()
@@ -61,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveData()
     {
-        Progress.Inctance.SaveData();
+        Progress.Inctance.SaveData("GM: save data"); 
     }
 
     public void SoundOff()

@@ -12,8 +12,8 @@ public class Gate : MonoBehaviour
 
     private void Start()
     {
-       deformationType = (DeformationType)Random.Range(0, 2);
-       value = Random.Range(-16, 17);
+        deformationType = (DeformationType)Random.Range(0, 2);
+        value = Random.Range(-16, 17);
 
         gateScript.UpdateVisual(deformationType, value);
     }

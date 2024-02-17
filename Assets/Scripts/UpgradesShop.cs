@@ -20,6 +20,7 @@ public class UpgradesShop : MonoBehaviour
             _coinManager.SpendMoney(20);
             Progress.Inctance._playerInfo.Width += 25;
             _playerModifi.SetWight(Progress.Inctance._playerInfo.Width);
+            Progress.Inctance.SaveData("US: buy width");
         }
     }
 
@@ -30,6 +31,7 @@ public class UpgradesShop : MonoBehaviour
             _coinManager.SpendMoney(20);
             Progress.Inctance._playerInfo.Heigth += 25;
             _playerModifi.SetHeight(Progress.Inctance._playerInfo.Heigth);
+            Progress.Inctance.SaveData("US: buy height");
         }
     }
 }

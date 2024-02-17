@@ -15,7 +15,10 @@ public class PlayerInfo
 
 public class Progress : MonoBehaviour
 {
-    [SerializeField] GameObject GameManager;
+    [SerializeField] GameManager GameManager;
+    [SerializeField] PlayerModifi PlayerModifi;
+
+    public bool IsRate = false;
 
     [DllImport("__Internal")]
     private static extern void SaveExternData(string data);
@@ -30,9 +33,11 @@ public class Progress : MonoBehaviour
 
     public static Progress Inctance;
 
-    public void SaveData()
+    public void SaveData(string log = "")
     {
+        WriteToConsole(string.Format("SAVE DATA: {0}", log));
         string jsonString = JsonUtility.ToJson(Inctance._playerInfo);
+        WriteToConsole(string.Format("SAVE DATA JSON: {0}", jsonString));
         SaveExternData(jsonString);
     }
 
@@ -40,15 +45,22 @@ public class Progress : MonoBehaviour
     {
         Inctance._playerInfo = JsonUtility.FromJson<PlayerInfo>(value);
         WriteToConsole("SetPlayerData: " + JsonUtility.ToJson(Inctance._playerInfo));
-        
+
         if (Inctance._playerInfo.Sound == 0)
         {
-            GameManager.GetComponent<GameManager>().SoundOff();
+            GameManager.SoundOff();
         }
         else
         {
-            GameManager.GetComponent<GameManager>().SoundOn();
+            GameManager.SoundOn();
         }
+
+        PlayerModifi.SetWidthHeight(Inctance._playerInfo.Width, Inctance._playerInfo.Heigth);
+    }
+
+    public void IsCanRate(bool isRate)
+    {
+        IsRate = isRate;
     }
 
     private void Awake()

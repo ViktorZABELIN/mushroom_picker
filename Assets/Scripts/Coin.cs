@@ -6,6 +6,13 @@ public class Coin : MonoBehaviour
 {
     [SerializeField] GameObject _CoinEffect;
     [SerializeField] float speed;
+    
+    private SoundEffect _coinSound;
+
+    private void Start()
+    {
+        _coinSound = GameObject.Find("Global audio").GetComponent<SoundEffect>();
+    }
 
     void Update()
     {
@@ -15,9 +22,9 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         FindObjectOfType<CoinManager>().AddOne();
+        _coinSound.CoinSound();
+        // Instantiate(_CoinEffect, transform.position, transform.rotation);
         Destroy(gameObject);
-        Instantiate(_CoinEffect, transform.position, transform.rotation);
-
     }
 
 

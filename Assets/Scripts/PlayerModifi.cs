@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerModifi : MonoBehaviour
 {
     [SerializeField] int _weight;
-    [SerializeField] int _hight;
+    [SerializeField] int _height;
 
     float _weightMultiplier = 0.0005f;
     float _hightMultiplier = 0.01f;
@@ -28,66 +28,50 @@ public class PlayerModifi : MonoBehaviour
 
     void Update()
     {
-        float offsetY = _hight * _hightMultiplier + 0.17f;
-        _topSpine.position = _bottomSpine.position + new Vector3(0, offsetY, 0);
-        _collaiderTransform.localScale = new Vector3(1, 1.84f + _hight * _hightMultiplier, 1);
+        ;
+    }
 
-       // if (Input.GetKeyDown(KeyCode.W))
-       // {
-          //  AddWeight(20);
-       // }
-
-       // if (Input.GetKeyDown(KeyCode.S))
-       // {
-          //  AddHight(20);
-       // }
+    public void SetWidthHeight(int width, int height)
+    {
+        _weight = width;
+        _height = height;
+        UpdateWight();
+        UpdateHeight();
     }
 
     public void AddWeight(int value)
     {
         _weight += value;
         UpdateWight();
-        if (value > 0)
-        {
-            _soundEffect.PumpSound();
-        }
+         _soundEffect.PumpSound();
     }
 
     public void AddHight(int value)
     {
-        _hight += value;
-        if (value > 0)
-        {
-            _soundEffect.PumpSound();
-        }
+        _height += value;
+        UpdateHeight();
+        _soundEffect.PumpSound();
     }
 
     public void SetWight(int value)
     {
         _weight += value;
         UpdateWight();
-        if (value > 0)
-        {
-            _soundEffect.PumpSound();
-        }
     }
 
     public void SetHeight(int value)
     {
-        _hight += value;
-        if (value > 0)
-        {
-            _soundEffect.PumpSound();
-        }
+        _height += value;
+        UpdateHeight();
     }
 
     public void HitBarrier()
     {
-        if (_hight > 0)
+        if (_height > 0)
         {
-            _hight -= 25;
-            Debug.Log("Высота изменилась");
-        } 
+            _height -= 25;
+            UpdateHeight();
+        }
         else if (_weight > 0)
         {
             _weight -= 25;
@@ -103,6 +87,14 @@ public class PlayerModifi : MonoBehaviour
     void UpdateWight()
     {
         _render.material.SetFloat("_PushValue", _weight * _weightMultiplier);
+        
+    }
+
+    void UpdateHeight()
+    {
+        float offsetY = _height * _hightMultiplier + 0.17f;
+        _topSpine.position = _bottomSpine.position + new Vector3(0, offsetY, 0);
+        _collaiderTransform.localScale = new Vector3(1, 1.84f + _height * _hightMultiplier, 1);
     }
 
     void Die()

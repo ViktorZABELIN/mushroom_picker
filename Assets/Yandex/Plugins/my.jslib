@@ -37,11 +37,18 @@ mergeInto(LibraryManager.library, {
 	SaveExternData: function(data)
 	{
 		console.info('#################### SaveExternData');
-		if (player != null) {
-			var dateString = UTF8ToString(data);
-			console.log(dateString);
-			console.log(JSON.parse(dateString));
+		var dateString = UTF8ToString(data);
+		console.log(dateString);
+		console.log(JSON.parse(dateString));
+		if (player != null)
+		{
+			console.info('Gamer is found');
 			player.setData(JSON.parse(dateString));
+		}
+		else
+		{
+			console.info('Gamer is NOT found');
+			localStorage.setItem('userData', dateString);
 		}
 	},
 	
@@ -56,6 +63,11 @@ mergeInto(LibraryManager.library, {
 				myGameInstance.SendMessage('Yandex', 'SetPlayerInfo', myJson);
 			});
 		}
+		else
+		{
+			var data = localStorage.getItem('userData');
+			if (data != null) myGameInstance.SendMessage('Yandex', 'SetPlayerInfo', data);
+		}
 	},
 	
 	GetLang: function() {
@@ -65,5 +77,11 @@ mergeInto(LibraryManager.library, {
 		stringToUTF8(returnStr, buffer, bufferSize);
 		return buffer;
 	},
+	
+	ShowAddInternal: function()
+	{
+		ysdk.adv.showFullscreenAdv();
+	},
+	
 });
 

@@ -64,6 +64,12 @@ public class Yandex : MonoBehaviour
         Progress.Inctance.SetPlayerData(value);
     }
 
+    public void IsCanRate(bool isRate)
+    {
+        Progress.Inctance.IsRate = isRate;
+        _rateGameButton.SetActive(isRate);
+    }
+
     //public void DataButton()
     //{
     //    GiveMePlayerData();
