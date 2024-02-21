@@ -55,13 +55,13 @@ public class PlayerModifi : MonoBehaviour
 
     public void SetWight(int value)
     {
-        _weight += value;
+        _weight = value;
         UpdateWight();
     }
 
     public void SetHeight(int value)
     {
-        _height += value;
+        _height = value;
         UpdateHeight();
     }
 

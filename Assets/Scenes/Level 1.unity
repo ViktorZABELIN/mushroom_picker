@@ -11603,7 +11603,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8, type: 3}
+    m_Font: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -11637,7 +11637,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8, type: 3}
+    m_Font: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
     m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
@@ -11649,7 +11649,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.21
-  m_Text: "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"
+  m_Text: "\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u044F \u0432
+    \u0438\u0433\u0440\u0435"
 --- !u!224 &1449741688744373189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11924,7 +11925,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8, type: 3}
+    m_Font: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -11936,9 +11937,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044F
-    \u0434\u043B\u044F \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F
-    \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0430 \u0438\u0433\u0440\u044B"
+  m_Text: "\u041F\u0440\u043E\u0433\u0440\u0435\u0441\u0441 \u0438\u0433\u0440\u044B
+    \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0435\u0442\u0441\u044F \u043B\u043E\u043A\u0430\u043B\u044C\u043D\u043E.
+    \u0414\u043B\u044F \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F
+    \u043F\u0440\u043E\u0433\u0440\u0435\u0441\u0441\u0430\n\u043C\u0435\u0436\u0434\u0443
+    \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430\u043C\u0438, \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430,
+    \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u0443\u0439\u0442\u0435\u0441\u044C."
 --- !u!224 &1449741689423751163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11956,8 +11960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -164.8085}
-  m_SizeDelta: {x: 689.0621, y: 30.2897}
+  m_AnchoredPosition: {x: 0, y: -161.63}
+  m_SizeDelta: {x: 689.0621, y: 56.5448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1449741689676608244
 CanvasRenderer:
@@ -12154,7 +12158,7 @@ RectTransform:
   m_GameObject: {fileID: 1449741689713296471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85388815, y: 0.56590754, z: 1.1431664}
+  m_LocalScale: {x: 0.7260611, y: 0.56590754, z: 1.1431664}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1449741688744373189}
@@ -12163,8 +12167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -116}
-  m_SizeDelta: {x: 243.9873, y: 91.069214}
+  m_AnchoredPosition: {x: -0.00002861, y: -111.30597}
+  m_SizeDelta: {x: 304.3516, y: 65.7083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1449741689713296471
 GameObject:
@@ -13685,7 +13689,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1062c701058745940ae5dca6219c64c8, type: 3}
+    m_Font: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
@@ -14131,7 +14135,7 @@ PrefabInstance:
     - target: {fileID: 6613947368237597686, guid: 927105ee65316d04e809dd93f8db07e5,
         type: 3}
       propertyPath: _speed
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6613947368237597686, guid: 927105ee65316d04e809dd93f8db07e5,
         type: 3}
